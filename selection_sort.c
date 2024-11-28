@@ -18,29 +18,34 @@ int main()
 
     printf("\n");
 
-    for(x = 1; x <= 5 - 1; x++)
+    for(x = 0; x < 5; x++)
     {
 
-        for(y = x; y > 0 && vetor[y - 1] > vetor[y]; y--)
+        for(y = x + 1; y < 5; y++)
         {
 
-            temp = vetor[y];
-            vetor[y] = vetor[y - 1];
-            vetor[y - 1] = temp;
+            if(vetor[x] > vetor[y])
+            {
+
+                temp = vetor[x];
+                vetor[x] = vetor[y];
+                vetor[y] = temp;
+
+            }
 
         }
 
     }
 
     printf("Vetor Ordenado: \t");
-    
+
     for(x = 0; x < 5; x++)
     {
 
         printf("%d ", vetor[x]);
 
     }
-
+    
     return 0;
 
 }
